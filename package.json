@@ -4,12 +4,14 @@
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-contrib-jshint": "latest",
-    "jshint-stylish": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-less": "latest",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-watch": "latest"
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-copy": "latest",
+    "jshint-stylish": "latest"
   },
   "author": "Juan Fran Rubiales",
   "license_url": "https://github.com/jrubiales/jcookie-banner/blob/master/LICENSE",
@@ -17,5 +19,5 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/jrubiales/jcookie-banner.git"
-  } 
+  }
 }

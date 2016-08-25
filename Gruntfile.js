@@ -5,25 +5,33 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      options: {
-        reporter: require('jshint-stylish')
-      },
 
-      build: ['Gruntfile.js', 'src/**/*.js']
+      // define the files to lint
+      files: ['Gruntfile.js', 'src/**/*.js'],
+
+      options: {
+        // globals: {
+        //   jQuery: true,
+        //   console: true,
+        //   module: true
+        // },
+        reporter: require('jshint-stylish')
+      }
     },
 
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= pkg.version %> | <%= pkg.author %> | <%= pkg.license_url %> */\n'
       },
-      build: {
-        src: 'src/js/<%= pkg.name %>.js',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+      dist: {
+        files: {
+          'dist/js/<%= pkg.name %>.min.js': ['src/js/<%= pkg.name %>.js']
+        }
       }
     },
 
     cssmin: {
-      build: {
+      dist: {
         files: [{
           expand: true,
           cwd: 'src/css',
@@ -32,15 +40,31 @@ module.exports = function(grunt) {
           ext: '.min.css'
         }]
       }
+    },
+
+    copy: {
+      main: {
+        files: [
+          {expand: true, cwd: 'src/locale/', src: ['**'], dest: 'dist/locale'},
+          {src: ['src/js/jcookie-banner-loader.js'], dest: 'dist/js/jcookie-banner-loader.js', filter: 'isFile'},
+        ],
+      },
+    },
+
+    watch: {
+      files: ['<%= jshint.files %>'],
+      tasks: ['jshint']
     }
 
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'cssmin', 'copy']);
 
 };
