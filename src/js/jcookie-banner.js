@@ -212,12 +212,12 @@
         },
 
         onHeaderClick : function(){
-            if (this.$cBanner.hasClass('hide')) this.show();     // Mostrar
+            if (this.$cBanner.hasClass('jcb-hide')) this.show();     // Mostrar
             else this.hide();                                    // Cerrar        
         },
 
         show: function(){
-            this.$cBanner.removeClass('hide').animate(function(){
+            this.$cBanner.removeClass('jcb-hide').animate(function(){
                 var cL = context.JCookieBanner;
                 if(cL.config.bannerPosition==='top')
                     return {'top': '+=' + (cL.$cBannerBody.height())};
@@ -229,7 +229,7 @@
         },
 
         hide : function(){
-            this.$cBanner.addClass('hide').animate(function(){
+            this.$cBanner.addClass('jcb-hide').animate(function(){
                 var cL = context.JCookieBanner;
                 if(cL.config.bannerPosition==='top')
                     return {'top': '-=' + (cL.$cBannerBody.height())};
@@ -247,7 +247,7 @@
             this.$eHeight = this.$cBannerHeader.height() + this.$cBannerBody.height();
             // Update height and position
             this.$cBanner.css('height', this.$eHeight);
-            if (this.$cBanner.hasClass('hide'))
+            if (this.$cBanner.hasClass('jcb-hide'))
                 this.$cBanner.css(this.config.bannerPosition, -this.$cBannerBody.height()); 
             else this.$cBanner.css(this.config.bannerPosition, 0);
         },
