@@ -82,6 +82,7 @@
             /* Opciones de internalización */
             locale: 'en_GB',
             translation: null,
+            localeDir: '/locale',
             
             onAcceptClick: function(){
                 /* Código a ejecutar cuando se acepta */
@@ -114,12 +115,12 @@
             this.$cBanner = $('#' + BANNER_ID);
 
             // Comprobar si existe la cookie del banner.
-            if (context.cookies.exists(this.config.cookie.name)) {
-                this.$cBanner.hide();
-                // Include code                
-                this.loadScript(this.config.scriptLoader);
-                return;
-            }
+            // if (context.cookies.exists(this.config.cookie.name)) {
+            //     this.$cBanner.hide();
+            //     // Include code                
+            //     this.loadScript(this.config.scriptLoader);
+            //     return;
+            // }
 
             // Crear estructura.
             this.$cBanner.addClass(this.config.themeClass);
@@ -271,7 +272,7 @@
 
         loadTranslation: function(callback, langCode) {
             if(this.config.translation===null){
-                var jsonFile = '/locale/' + langCode + '/' + this.config.locale + '.json';   
+                var jsonFile = this.config.localeDir + '/' + langCode + '/' + this.config.locale + '.json';   
                 var jqxhr = $.get(jsonFile, function(data) {
                     callback(data);
                 }).fail(function() {
