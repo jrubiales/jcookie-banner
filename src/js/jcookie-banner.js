@@ -115,12 +115,12 @@
             this.$cBanner = $('#' + BANNER_ID);
 
             // Comprobar si existe la cookie del banner.
-            // if (context.cookies.exists(this.config.cookie.name)) {
-            //     this.$cBanner.hide();
-            //     // Include code                
-            //     this.loadScript(this.config.scriptLoader);
-            //     return;
-            // }
+            if (context.cookies.exists(this.config.cookie.name)) {
+                this.$cBanner.hide();
+                // Include code                
+                this.loadScript(this.config.scriptLoader);
+                return;
+            }
 
             // Crear estructura.
             this.$cBanner.addClass(this.config.themeClass);
