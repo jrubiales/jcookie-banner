@@ -71,7 +71,7 @@
             autoHide: true,
             showBannerOnce: false,
             timeOut: 10,
-            scriptLoader: '/js/jcookie-banner-loader.js',
+            scriptLoader: 'js/jcookie-banner-loader.js',
 
             /* cookie que se usa para ocultar la barra una vez se ha aceptado el mensaje */
             cookie: {
@@ -82,7 +82,7 @@
             /* Opciones de internalización */
             locale: 'en_GB',
             translation: null,
-            localeDir: '/locale',
+            localeDir: 'locale',
             
             onAcceptClick: function(){
                 /* Código a ejecutar cuando se acepta */
