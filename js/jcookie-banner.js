@@ -80,7 +80,7 @@
             },
 
             /* Opciones de internalización */
-            locale: 'en_EN',
+            locale: 'en_GB',
             translation: null,
             
             onAcceptClick: function(){
@@ -273,11 +273,10 @@
             if(this.config.translation===null){
                 var jsonFile = '/locale/' + langCode + '/' + this.config.locale + '.json';   
                 var jqxhr = $.get(jsonFile, function(data) {
-                    callback(JSON.parse(data));
+                    callback(data);
                 }).fail(function() {
                      throw 'Error al cargar la traducción'; 
-                });               
-
+                });
             } else callback(this.config.translation);
         },
            
