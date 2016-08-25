@@ -115,12 +115,12 @@
             this.$cBanner = $('#' + BANNER_ID);
 
             // Comprobar si existe la cookie del banner.
-            if (context.cookies.exists(this.config.cookie.name)) {
-                this.$cBanner.hide();
-                // Include code                
-                this.loadScript(this.config.scriptLoader);
-                return;
-            }
+            // if (context.cookies.exists(this.config.cookie.name)) {
+            //     this.$cBanner.hide();
+            //     // Include code                
+            //     this.loadScript(this.config.scriptLoader);
+            //     return;
+            // }
 
             // Crear estructura.
             this.$cBanner.addClass(this.config.themeClass);
@@ -166,7 +166,7 @@
                 if(cL.config.mode === 'permissive'){
                     
                     cL.$cBannerBody.html('<p>' + translation.permissive_text + 
-                        ' <a href="#">' + translation.here + '</a>' + 
+                        ' <a href="' + translation.url_legal_advice + '" target="_blank">' + translation.here + '</a>' + 
                         ' - <a href="#" class="lAgree">' + translation.understood + '</a></p>');
 
                     // Carga los scripts sin preguntar. (modo permissive)
@@ -180,7 +180,7 @@
                 } else if(cL.config.mode === 'strict'){
 
                     cL.$cBannerBody.html('<p>' + translation.strict_text + 
-                        ' <a href="#">' + translation.here + '</a>' + 
+                        ' <a href="' + translation.url_legal_advice + '">' + translation.here + '</a>' + 
                         ' - <a href="#" class="lAgree">' + translation.agree + '</a> | <a href="#" class="lDisagree">' + translation.disagree + '</a></p>');
 
                     $('.lAgree').on('click', function(){
