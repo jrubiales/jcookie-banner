@@ -1,0 +1,21 @@
+{
+  "name": "jcookie-banner",
+  "description": "Banner en js para anunciar el uso de cookies de un sitio web",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-jshint": "latest",
+    "jshint-stylish": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest"
+  },
+  "author": "Juan Fran Rubiales",
+  "license_url": "https://github.com/jrubiales/jcookie-banner/blob/master/LICENSE",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jrubiales/jcookie-banner.git"
+  } 
+}

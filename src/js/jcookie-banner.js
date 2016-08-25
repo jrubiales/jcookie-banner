@@ -240,7 +240,7 @@
         },
 
         autoHide: function(){     
-            return setTimeout(function(){ context.JCookieBanner.hide() }, this.config.timeOut/SECONDS); 
+            return setTimeout(function(){ context.JCookieBanner.hide(); }, this.config.timeOut/SECONDS); 
         },
 
         onResize : function(){      
